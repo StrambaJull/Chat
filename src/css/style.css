@@ -1,0 +1,20 @@
+.root{
+    -fx-font-size: 16;
+}
+.button{
+    -fx-background-color: #F3E3F0;
+}
+#btnHello{
+    -fx-background-color: #CCCCFF;
+}
+.button:hover, #btnHello:hover{
+    -fx-background-color: #CCCCCC;
+    -fx-text-fill: #663399;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+.text-area{
+    -fx-background-color: #FFCCCC;
+    -fx-control-inner-background: #FFCCCC;
+    -fx-text-field: #663398;
+}
