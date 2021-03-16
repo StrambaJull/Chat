@@ -39,4 +39,15 @@ public class SimpleAuthService implements AuthService{
         return null;
     }
 
+    @Override
+    public boolean registration (String login, String password, String nickName) {
+        for(UserData user: users){
+            if(user.login.equalsIgnoreCase (login) || user.nickName.equalsIgnoreCase (nickName)){ //проверим на наличие такого же логина+никнейма. Если такие логин+никнейм уже есть, то
+                return false; //не регистрируем такого пользователя
+            }
+        }
+        users.add(new UserData(login, password, nickName)); //Если такого логина+никнейма нет, то добавляем нового клиента в список
+        return true;
+    }
+
 }

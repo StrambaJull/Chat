@@ -6,18 +6,24 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.PasswordField?>
 
+<?import javafx.scene.control.ListView?>
 <VBox fx:controller="client.Controller" xmlns:fx="http://javafx.com/fxml" alignment="center">
-    <HBox fx:id="authPanel" visible="true" managed="true">
-        <TextField fx:id="loginField" promptText="login" HBox.hgrow="ALWAYS"/>
-        <PasswordField fx:id="passwordField" promptText="password" HBox.hgrow="ALWAYS" onAction="#tryToAction"/>
-        <Button text="Send" onAction="#tryToAction" minWidth="50"/>
-    </HBox>
 
     <stylesheets>
         <URL value="@/css/style.css"/>
     </stylesheets>
 
-    <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" editable="false"/>
+    <HBox fx:id="authPanel" visible="true" managed="true">
+        <TextField fx:id="loginField" promptText="login" HBox.hgrow="ALWAYS"/>
+        <PasswordField fx:id="passwordField" promptText="password" HBox.hgrow="ALWAYS" onAction="#tryToAction"/>
+        <Button text="auth" onAction="#tryToAction" minWidth="60"/>
+        <Button text="reg" onAction="#registration" minWidth="60"/>
+    </HBox>
+
+    <HBox VBox.vgrow="ALWAYS">
+        <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" editable="false" wrapText="true"/>
+        <ListView fx:id="clientsList" visible="true" managed="false" minWidth="70" onMouseClicked="#clickClientList"/>
+    </HBox>
     <HBox fx:id="msgPanel" visible="true" managed="false">
         <TextField fx:id="textField" promptText="введите сообщение" HBox.hgrow="ALWAYS" onAction="#sendMsg"/>
         <Button text="Send" onAction="#sendMsg"/>
